@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Romantismo Brasileiro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Quiz do Romantismo Brasileiro</h1>
+    <div id="intro">
+      <p>Escolha a geração literária:</p>
+      <select id="geracao">
+        <option value="1">1ª Geração - Indianismo</option>
+        <option value="2">2ª Geração - Ultrarromântica</option>
+        <option value="3">3ª Geração - Condoreira</option>
+      </select>
+      <button onclick="iniciarJogo()">Começar</button>
+    </div>
+    
+    <div id="quiz" class="escondido">
+      <div id="pergunta"></div>
+      <ul id="opcoes"></ul>
+      <button onclick="proximaPergunta()">Próxima</button>
+    </div>
+
+    <div id="resultado" class="escondido">
+      <h2>Fim de fase!</h2>
+      <p id="pontuacao"></p>
+      <button onclick="reiniciar()">Jogar Novamente</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
