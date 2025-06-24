@@ -10,7 +10,6 @@
       "opcoes": ["Morte e melancolia", "Crítica social", "Amor platônico", "Exaltação da pátria e do índio"],
       "correta": 3
     }
-    // Adicione +18 perguntas aqui...
   ],
   "geracao2": [
     {
@@ -18,7 +17,6 @@
       "opcoes": ["Gonçalves Dias", "Castro Alves", "Álvares de Azevedo", "José de Alencar"],
       "correta": 2
     }
-    // +19 perguntas...
   ],
   "geracao3": [
     {
@@ -26,135 +24,5 @@
       "opcoes": ["Casimiro de Abreu", "Castro Alves", "Gonçalves de Magalhães", "Machado de Assis"],
       "correta": 1
     }
-    // +19 perguntas...
   ]
 }
-"geracao2": [
-  {
-    "pergunta": "Autor símbolo da 2ª geração romântica:",
-    "opcoes": ["Gonçalves Dias", "Castro Alves", "Álvares de Azevedo", "José de Alencar"],
-    "correta": 2
-  },
-  {
-    "pergunta": "A 2ª geração romântica é marcada por:",
-    "opcoes": ["Idealização da mulher", "Nacionalismo", "Culto à morte", "Engajamento político"],
-    "correta": 2
-  },
-  {
-    "pergunta": "Livro mais conhecido de Álvares de Azevedo:",
-    "opcoes": ["A Moreninha", "Lira dos Vinte Anos", "Espumas Flutuantes", "Noite na Taverna"],
-    "correta": 1
-  },
-  {
-    "pergunta": "Obra famosa da literatura gótica do Romantismo brasileiro:",
-    "opcoes": ["Inocência", "A Moreninha", "Noite na Taverna", "Iracema"],
-    "correta": 2
-  },
-  {
-    "pergunta": "Poeta que faleceu aos 20 anos e marcou a geração:",
-    "opcoes": ["Casimiro de Abreu", "Álvares de Azevedo", "Castro Alves", "Machado de Assis"],
-    "correta": 1
-  },
-  {
-    "pergunta": "Tema frequente na poesia da 2ª geração:",
-    "opcoes": ["Amor impossível e mórbido", "Exaltação da natureza", "Conquista indígena", "Crítica ao capitalismo"],
-    "correta": 0
-  },
-  {
-    "pergunta": "Qual autor NÃO pertence à 2ª geração romântica?",
-    "opcoes": ["Fagundes Varela", "Álvares de Azevedo", "Casimiro de Abreu", "Castro Alves"],
-    "correta": 3
-  },
-  {
-    "pergunta": "Casimiro de Abreu é autor da obra:",
-    "opcoes": ["O Navio Negreiro", "Lira dos Vinte Anos", "Meus Oito Anos", "Iracema"],
-    "correta": 2
-  },
-  {
-    "pergunta": "Característica da linguagem da 2ª geração romântica:",
-    "opcoes": ["Tom otimista", "Uso de ironia", "Sentimentalismo exagerado", "Objetividade"],
-    "correta": 2
-  },
-  {
-    "pergunta": "Movimento europeu que influenciou a 2ª geração romântica:",
-    "opcoes": ["Iluminismo", "Naturalismo", "Romantismo francês", "Mal do Século"],
-    "correta": 3
-  },
-  {
-    "pergunta": "A mulher, na poesia da 2ª geração, é vista como:",
-    "opcoes": ["Objeto de desejo carnal", "Companheira de luta", "Ideal inatingível", "Figura materna"],
-    "correta": 2
-  },
-  {
-    "pergunta": "Qual desses temas NÃO pertence à 2ª geração?",
-    "opcoes": ["Angústia existencial", "Saudosismo", "Nacionalismo", "Morte"],
-    "correta": 2
-  },
-  {
-    "pergunta": "O poema 'Meus Oito Anos' trata principalmente de:",
-    "opcoes": ["Amor platônico", "A infância e o tempo", "O sofrimento da morte", "A beleza da natureza"],
-    "correta": 1
-  },
-  {
-    "pergunta": "O tom das poesias da 2ª geração romântica é:",
-    "opcoes": ["Político", "Trágico e introspectivo", "Heroico", "Racional"],
-    "correta": 1
-  },
-"geracao3": [
-  {
-    "pergunta": "Poeta conhecido como o 'Poeta dos Escravos':",
-    "opcoes": ["Casimiro de Abreu", "Castro Alves", "Gonçalves de Magalhães", "Machado de Assis"],
-    "correta": 1
-  },
-  {
-    "pergunta": "Tema predominante na 3ª geração romântica:",
-    "opcoes": ["Amor idealizado", "Pessimismo", "Engajamento social", "Saudade da infância"],
-    "correta": 2
-  },
-  {
-    "pergunta": "Principal característica da poesia condoreira:",
-    "opcoes": ["Forma rígida", "Crítica social e política", "Religiosidade", "Uso de ironia"],
-    "correta": 1
-  },
-  {
-    "pergunta": "'O Navio Negreiro' denuncia:",
-    "opcoes": ["A exploração indígena", "A escravidão africana", "A guerra no Brasil", "A pobreza nas cidades"],
-    "correta": 1
-  },
-  {
-    "pergunta": "Castro Alves era defensor da:",
-    "opcoes": ["Monarquia", "Escravidão", "Liberdade e justiça social", "Conquista do sertão"],
-    "correta": 2
-  },
-  {
-    "pergunta": "A 3ª geração é chamada de 'condoreira' porque:",
-    "opcoes": ["Se passava nos Andes", "Tinha estilo grandioso como o voo do condor", "Só falava de aves", "Todos os autores moravam no sul"],
-    "correta": 1
-  },
-  {
-    "pergunta": "Poeta da 3ª geração conhecido por sua oratória e veia política:",
-    "opcoes": ["Castro Alves", "Álvares de Azevedo", "Gonçalves Dias", "Joaquim Nabuco"],
-    "correta": 0
-  },
-  {
-    "pergunta": "A poesia condoreira é fortemente influenciada por:",
-    "opcoes": ["Romantismo francês", "Iluminismo", "Liberalismo e abolicionismo", "Catolicismo"],
-    "correta": 2
-  },
-  {
-    "pergunta": "Obra que melhor representa a causa abolicionista na poesia romântica:",
-    "opcoes": ["Iracema", "O Navio Negreiro", "Meus Oito Anos", "Noite na Taverna"],
-    "correta": 1
-  },
-  {
-    "pergunta": "Castro Alves estudou Direito na mesma faculdade que:",
-    "opcoes": ["José de Alencar", "Álvares de Azevedo", "Machado de Assis", "Gonçalves Dias"],
-    "correta": 1
-  },
-  {
-    "pergunta": "Estilo da linguagem de Castro Alves:",
-    "opcoes": ["Simples e coloquial", "Trágica e sentimental", "Oratória, forte e grandiosa", "Seca e direta"],
-    "correta": 2
-  },
-  {
-    "pergunta
