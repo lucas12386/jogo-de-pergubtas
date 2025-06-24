@@ -1,7 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
+  background-color: #f9f9f9;
   margin: 0;
   padding: 20px;
 }
@@ -10,9 +9,9 @@ body {
   max-width: 700px;
   margin: auto;
   background: white;
-  padding: 20px;
+  padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 h1, h2 {
@@ -22,26 +21,26 @@ h1, h2 {
 button {
   display: block;
   margin: 20px auto;
-  padding: 10px 20px;
+  padding: 10px 25px;
   font-size: 16px;
   cursor: pointer;
 }
 
 #opcoes {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
 }
 
 #opcoes li {
+  background-color: #eee;
   margin: 10px 0;
-  background: #eee;
-  padding: 10px;
+  padding: 12px;
   border-radius: 5px;
   cursor: pointer;
 }
 
 #opcoes li:hover {
-  background-color: #dcdcdc;
+  background-color: #ddd;
 }
 
 .escondido {

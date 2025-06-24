@@ -1,69 +1,63 @@
 let perguntas = [];
-let indice = 0;
-let pontuacao = 0;
-let geracaoAtual = 1;
+let indiceAtual = 0;
+let pontos = 0;
 
-document.getElementById('btnIniciar').addEventListener('click', iniciarJogo);
-document.getElementById('btnReiniciar').addEventListener('click', reiniciar);
-
-async function iniciarJogo() {
-  document.getElementById('intro').classList.add('escondido');
-  document.getElementById('resultado').classList.add('escondido');
-  document.getElementById('quiz').classList.remove('escondido');
-
-  geracaoAtual = parseInt(document.getElementById('geracao').value);
+async function iniciarQuiz() {
+  const geracaoSelecionada = document.getElementById('geracao').value;
   const response = await fetch('perguntas.json');
-  const data = await response.json();
-  perguntas = data[`geracao${geracaoAtual}`];
+  const dados = await response.json();
+  perguntas = dados[`geracao${geracaoSelecionada}`];
 
-  indice = 0;
-  pontuacao = 0;
+  indiceAtual = 0;
+  pontos = 0;
+
+  document.getElementById('inicio').classList.add('escondido');
+  document.getElementById('quiz').classList.remove('escondido');
+  document.getElementById('final').classList.add('escondido');
 
   mostrarPergunta();
 }
 
 function mostrarPergunta() {
-  const perguntaAtual = perguntas[indice];
-  document.getElementById('pergunta').innerText = `(${indice + 1}/${perguntas.length}) ${perguntaAtual.pergunta}`;
+  if (indiceAtual >= perguntas.length) {
+    mostrarResultado();
+    return;
+  }
+
+  const perguntaAtual = perguntas[indiceAtual];
+  document.getElementById('pergunta').textContent = perguntaAtual.pergunta;
 
   const lista = document.getElementById('opcoes');
   lista.innerHTML = '';
 
   perguntaAtual.opcoes.forEach((opcao, i) => {
-    const li = document.createElement('li');
-    li.textContent = opcao;
-    li.addEventListener('click', () => verificarResposta(i));
-    lista.appendChild(li);
+    const item = document.createElement('li');
+    item.textContent = opcao;
+    item.onclick = () => verificarResposta(i);
+    lista.appendChild(item);
   });
 }
 
-function verificarResposta(indiceSelecionado) {
-  const correta = perguntas[indice].correta;
-
-  if (indiceSelecionado === correta) {
+function verificarResposta(indiceEscolhido) {
+  const correta = perguntas[indiceAtual].correta;
+  if (indiceEscolhido === correta) {
+    pontos++;
     alert('✅ Correto!');
-    pontuacao++;
   } else {
-    const respostaCerta = perguntas[indice].opcoes[correta];
-    alert(`❌ Errado! Resposta correta: ${respostaCerta}`);
+    alert(`❌ Errado! A resposta correta era: ${perguntas[indiceAtual].opcoes[correta]}`);
   }
-
-  indice++;
-
-  if (indice < perguntas.length) {
-    mostrarPergunta();
-  } else {
-    fimDeJogo();
-  }
+  indiceAtual++;
+  mostrarPergunta();
 }
 
-function fimDeJogo() {
+function mostrarResultado() {
   document.getElementById('quiz').classList.add('escondido');
-  document.getElementById('resultado').classList.remove('escondido');
-  document.getElementById('pontuacao').innerText = `Você acertou ${pontuacao} de ${perguntas.length} perguntas.`;
+  document.getElementById('final').classList.remove('escondido');
+  document.getElementById('pontuacaoFinal').textContent = `Você acertou ${pontos} de ${perguntas.length} perguntas.`;
 }
 
-function reiniciar() {
-  document.getElementById('intro').classList.remove('escondido');
-  document.getElementById('resultado').classList.add('escondido');
+function voltarInicio() {
+  document.getElementById('inicio').classList.remove('escondido');
+  document.getElementById('quiz').classList.add('escondido');
+  document.getElementById('final').classList.add('escondido');
 }
