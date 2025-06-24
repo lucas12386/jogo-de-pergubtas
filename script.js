@@ -3,8 +3,12 @@ let indice = 0;
 let pontuacao = 0;
 let geracaoAtual = 1;
 
+document.getElementById('btnIniciar').addEventListener('click', iniciarJogo);
+document.getElementById('btnReiniciar').addEventListener('click', reiniciar);
+
 async function iniciarJogo() {
   document.getElementById('intro').classList.add('escondido');
+  document.getElementById('resultado').classList.add('escondido');
   document.getElementById('quiz').classList.remove('escondido');
 
   geracaoAtual = parseInt(document.getElementById('geracao').value);
@@ -20,33 +24,32 @@ async function iniciarJogo() {
 
 function mostrarPergunta() {
   const perguntaAtual = perguntas[indice];
-  document.getElementById('pergunta').innerText = perguntaAtual.pergunta;
+  document.getElementById('pergunta').innerText = `(${indice + 1}/${perguntas.length}) ${perguntaAtual.pergunta}`;
 
   const lista = document.getElementById('opcoes');
   lista.innerHTML = '';
 
-  perguntaAtual.opcoes.forEach((op, i) => {
+  perguntaAtual.opcoes.forEach((opcao, i) => {
     const li = document.createElement('li');
-    li.textContent = op;
-    li.onclick = () => verificarResposta(i);
+    li.textContent = opcao;
+    li.addEventListener('click', () => verificarResposta(i));
     lista.appendChild(li);
   });
 }
 
 function verificarResposta(indiceSelecionado) {
   const correta = perguntas[indice].correta;
-  if (indiceSelecionado === correta) {
-    pontuacao++;
-    alert('✅ Correto!');
-  } else {
-    alert('❌ Errado! A resposta correta era: ' + perguntas[indice].opcoes[correta]);
-  }
-  document.querySelector('button[onclick="proximaPergunta()"]').style.display = 'block';
-}
 
-function proximaPergunta() {
+  if (indiceSelecionado === correta) {
+    alert('✅ Correto!');
+    pontuacao++;
+  } else {
+    const respostaCerta = perguntas[indice].opcoes[correta];
+    alert(`❌ Errado! Resposta correta: ${respostaCerta}`);
+  }
+
   indice++;
-  document.querySelector('button[onclick="proximaPergunta()"]').style.display = 'none';
+
   if (indice < perguntas.length) {
     mostrarPergunta();
   } else {
@@ -61,6 +64,6 @@ function fimDeJogo() {
 }
 
 function reiniciar() {
-  document.getElementById('resultado').classList.add('escondido');
   document.getElementById('intro').classList.remove('escondido');
+  document.getElementById('resultado').classList.add('escondido');
 }
