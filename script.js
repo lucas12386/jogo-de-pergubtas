@@ -1,7 +1,8 @@
 const questions = [
+    // Perguntas da 1ª Geração Romântica
     {
         question: "Quem é o principal autor da 1ª Geração Romântica no Brasil?",
-        options: ["Gonçalves Dias", "José de Alencar", "Castro Alves", "Alvares de Azevedo"],
+        options: ["Gonçalves Dias", "José de Alencar", "Castro Alves", "Álvares de Azevedo"],
         correctAnswer: 0
     },
     {
@@ -20,9 +21,10 @@ const questions = [
         correctAnswer: 2
     },
 
+    // Perguntas da 2ª Geração Romântica
     {
         question: "Quem é o principal autor da 2ª Geração Romântica no Brasil?",
-        options: ["José de Alencar", "Castro Alves", "Machado de Assis", "Alvares de Azevedo"],
+        options: ["José de Alencar", "Castro Alves", "Machado de Assis", "Álvares de Azevedo"],
         correctAnswer: 1
     },
     {
@@ -41,9 +43,10 @@ const questions = [
         correctAnswer: 2
     },
 
+    // Perguntas da 3ª Geração Romântica
     {
         question: "Quem é o principal autor da 3ª Geração Romântica no Brasil?",
-        options: ["Machado de Assis", "Alvares de Azevedo", "Raul Pompeia", "Bernardo Guimarães"],
+        options: ["Machado de Assis", "Álvares de Azevedo", "Raul Pompeia", "Bernardo Guimarães"],
         correctAnswer: 0
     },
     {
@@ -57,7 +60,7 @@ const questions = [
         correctAnswer: 0
     },
     {
-        question: "O que caracteriza o estilo de Alvares de Azevedo?",
+        question: "O que caracteriza o estilo de Álvares de Azevedo?",
         options: ["O Pessimismo", "O Nacionalismo", "A Ideologia Liberal", "O Idealismo"],
         correctAnswer: 0
     },
@@ -107,4 +110,5 @@ function resetGame() {
     document.getElementById('question-container').classList.remove('hidden');
 }
 
-window.onload = loadQuestion;
+// Adicionando o evento que chama a função 'loadQuestion' após o DOM ser carregado
+document.addEventListener('DOMContentLoaded', loadQuestion);
