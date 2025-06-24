@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Perguntas - Gerações Românticas do Brasil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Jogo: Gerações Românticas do Brasil</h1>
+        <div id="question-container">
+            <h2 id="question"></h2>
+            <div id="options">
+                <button class="option-btn" onclick="nextQuestion(0)">Resposta 1</button>
+                <button class="option-btn" onclick="nextQuestion(1)">Resposta 2</button>
+                <button class="option-btn" onclick="nextQuestion(2)">Resposta 3</button>
+                <button class="option-btn" onclick="nextQuestion(3)">Resposta 4</button>
+            </div>
+        </div>
+        <div id="result" class="hidden">
+            <h2 id="score">Seu Resultado: 0</h2>
+            <button onclick="resetGame()">Recomeçar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
