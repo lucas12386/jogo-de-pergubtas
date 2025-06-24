@@ -72,6 +72,7 @@ let indiceAtual = 0;
 let pontos = 0;
 
 function iniciarQuiz() {
+  // Captura a geração selecionada no menu de dropdown
   const select = document.getElementById("geracao");
   const geracaoSelecionada = select.value;
 
@@ -85,6 +86,7 @@ function iniciarQuiz() {
   indiceAtual = 0;
   pontos = 0;
 
+  // Exibe a área de quiz e esconde a tela inicial
   document.getElementById("inicio").classList.add("escondido");
   document.getElementById("quiz").classList.remove("escondido");
   document.getElementById("final").classList.add("escondido");
@@ -102,12 +104,12 @@ function mostrarPergunta() {
   document.getElementById("pergunta").textContent = perguntaAtual.pergunta;
 
   const opcoes = document.getElementById("opcoes");
-  opcoes.innerHTML = "";
+  opcoes.innerHTML = ""; // Limpa as opções anteriores
 
   perguntaAtual.opcoes.forEach((opcao, index) => {
     const li = document.createElement("li");
     li.textContent = opcao;
-    li.addEventListener("click", () => verificarResposta(index));
+    li.addEventListener("click", () => verificarResposta(index)); // Adiciona o evento de clique
     opcoes.appendChild(li);
   });
 }
