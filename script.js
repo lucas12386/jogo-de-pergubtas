@@ -1,145 +1,184 @@
-const todasPerguntas = {
-  geracao1: [
-    {
-      pergunta: "Quem é o principal autor da 1ª geração romântica no Brasil?",
-      opcoes: ["Álvares de Azevedo", "Castro Alves", "Gonçalves Dias", "José de Alencar"],
-      correta: 2
-    },
-    {
-      pergunta: "Tema central da poesia da 1ª geração romântica:",
-      opcoes: ["Morte e melancolia", "Crítica social", "Exaltação do índio e da natureza", "Amor platônico"],
-      correta: 2
-    },
-    {
-      pergunta: "Obra famosa de Gonçalves Dias:",
-      opcoes: ["O Navio Negreiro", "Noite na Taverna", "Canção do Exílio", "Iracema"],
-      correta: 2
-    },
-    {
-      pergunta: "A 1ª geração buscava construir:",
-      opcoes: ["Uma crítica ao governo", "Uma identidade nacional", "Uma sátira da nobreza", "Um humor popular"],
-      correta: 1
-    }
-  ],
-  geracao2: [
-    {
-      pergunta: "Poeta símbolo da 2ª geração romântica:",
-      opcoes: ["Gonçalves Dias", "Castro Alves", "Álvares de Azevedo", "Machado de Assis"],
-      correta: 2
-    },
-    {
-      pergunta: "Principal tema da 2ª geração:",
-      opcoes: ["Exaltação do índio", "Morte, tédio e pessimismo", "Liberdade e justiça", "Vida rural"],
-      correta: 1
-    },
-    {
-      pergunta: "Qual destas obras é de Álvares de Azevedo?",
-      opcoes: ["O Guarani", "Lira dos Vinte Anos", "Espumas Flutuantes", "Inocência"],
-      correta: 1
-    },
-    {
-      pergunta: "Casimiro de Abreu ficou famoso por qual poema?",
-      opcoes: ["O Navio Negreiro", "Meus Oito Anos", "Iracema", "Canção do Exílio"],
-      correta: 1
-    }
-  ],
-  geracao3: [
-    {
-      pergunta: "Quem é o 'Poeta dos Escravos'?",
-      opcoes: ["Álvares de Azevedo", "Casimiro de Abreu", "Castro Alves", "José de Alencar"],
-      correta: 2
-    },
-    {
-      pergunta: "A 3ª geração romântica é marcada por:",
-      opcoes: ["Nacionalismo indígena", "Crítica social e política", "Amor idealizado", "Saudosismo"],
-      correta: 1
-    },
-    {
-      pergunta: "Poema mais conhecido de Castro Alves:",
-      opcoes: ["Canção do Exílio", "O Guarani", "O Navio Negreiro", "Noite na Taverna"],
-      correta: 2
-    },
-    {
-      pergunta: "A 3ª geração recebeu o nome 'condoreira' por:",
-      opcoes: ["Referência à natureza", "Referência ao condor e aos ideais de liberdade", "Local de nascimento dos autores", "Presença de temas religiosos"],
-      correta: 1
-    }
-  ]
-};
+let questions = [
+  // 1ª Geração Romântica
+  {
+    question: "Quem é o principal autor da 1ª geração romântica no Brasil?",
+    options: [
+      "Álvares de Azevedo",
+      "Castro Alves",
+      "Gonçalves Dias",
+      "José de Alencar"
+    ],
+    correct: 0
+  },
+  {
+    question: "Qual o principal tema da 1ª geração romântica?",
+    options: [
+      "Nacionalismo",
+      "Amor e saudade",
+      "Exaltação do índio",
+      "Morte e melancolia"
+    ],
+    correct: 3
+  },
+  {
+    question: "Obra famosa de Gonçalves Dias?",
+    options: [
+      "Iracema",
+      "Canção do Exílio",
+      "O Primo Basílio",
+      "O Guarani"
+    ],
+    correct: 1
+  },
+  {
+    question: "A 1ª geração romântica teve forte influência de qual movimento literário?",
+    options: [
+      "Classicismo",
+      "Barroco",
+      "Ultrarromantismo",
+      "Arcadismo"
+    ],
+    correct: 3
+  },
 
-let perguntas = [];
-let indiceAtual = 0;
-let pontos = 0;
+  // 2ª Geração Romântica
+  {
+    question: "Poeta símbolo da 2ª geração romântica?",
+    options: [
+      "Gonçalves Dias",
+      "Castro Alves",
+      "Álvares de Azevedo",
+      "Machado de Assis"
+    ],
+    correct: 1
+  },
+  {
+    question: "Qual o principal tema da 2ª geração romântica?",
+    options: [
+      "Amor platônico",
+      "Morte, tédio e pessimismo",
+      "Crítica à sociedade",
+      "Religiosidade"
+    ],
+    correct: 1
+  },
+  {
+    question: "Quem escreveu a obra 'O Navio Negreiro'?",
+    options: [
+      "José de Alencar",
+      "Castro Alves",
+      "Álvares de Azevedo",
+      "Gonçalves Dias"
+    ],
+    correct: 1
+  },
+  {
+    question: "Casimiro de Abreu ficou famoso por qual poema?",
+    options: [
+      "Meus Oito Anos",
+      "O Navio Negreiro",
+      "Canção do Exílio",
+      "Lira dos Vinte Anos"
+    ],
+    correct: 0
+  },
 
-function iniciarQuiz() {
-  // Captura a geração selecionada no menu de dropdown
-  const select = document.getElementById("geracao");
-  const geracaoSelecionada = select.value;
-
-  perguntas = todasPerguntas[`geracao${geracaoSelecionada}`];
-
-  if (!perguntas || perguntas.length === 0) {
-    alert("Não há perguntas para essa geração.");
-    return;
+  // 3ª Geração Romântica
+  {
+    question: "Qual poeta é conhecido como 'Poeta dos Escravos'?",
+    options: [
+      "José de Alencar",
+      "Castro Alves",
+      "Álvares de Azevedo",
+      "Gonçalves Dias"
+    ],
+    correct: 1
+  },
+  {
+    question: "A 3ª geração romântica recebeu o nome 'condoreira' por:",
+    options: [
+      "Referência ao condor e aos ideais de liberdade",
+      "Exaltação à natureza",
+      "Protagonismo do índio",
+      "Saudosismo"
+    ],
+    correct: 0
+  },
+  {
+    question: "Quem escreveu a obra 'O Navio Negreiro'?",
+    options: [
+      "Castro Alves",
+      "José de Alencar",
+      "Álvares de Azevedo",
+      "Gonçalves Dias"
+    ],
+    correct: 0
+  },
+  {
+    question: "A 3ª geração romântica é também chamada de:",
+    options: [
+      "Ultrarromântica",
+      "Indianista",
+      "Condoreira",
+      "Realista"
+    ],
+    correct: 2
   }
+];
 
-  indiceAtual = 0;
-  pontos = 0;
+let currentQuestionIndex = 0;
+let score = 0;
 
-  // Exibe a área de quiz e esconde a tela inicial
-  document.getElementById("inicio").classList.add("escondido");
-  document.getElementById("quiz").classList.remove("escondido");
-  document.getElementById("final").classList.add("escondido");
-
-  mostrarPergunta();
+function startGame() {
+  document.getElementById("start-container").style.display = "none";
+  document.getElementById("question-container").style.display = "block";
+  showQuestion();
 }
 
-function mostrarPergunta() {
-  if (indiceAtual >= perguntas.length) {
-    mostrarResultado();
-    return;
-  }
+function showQuestion() {
+  const question = questions[currentQuestionIndex];
+  document.getElementById("question-text").textContent = question.question;
 
-  const perguntaAtual = perguntas[indiceAtual];
-  document.getElementById("pergunta").textContent = perguntaAtual.pergunta;
+  const options = document.getElementById("answer-options");
+  options.innerHTML = ""; // Clear previous options
 
-  const opcoes = document.getElementById("opcoes");
-  opcoes.innerHTML = ""; // Limpa as opções anteriores
-
-  perguntaAtual.opcoes.forEach((opcao, index) => {
+  question.options.forEach((option, index) => {
+    const button = document.createElement("button");
+    button.classList.add("answer-btn");
+    button.textContent = option;
+    button.onclick = () => checkAnswer(index);
     const li = document.createElement("li");
-    li.textContent = opcao;
-    li.addEventListener("click", () => verificarResposta(index)); // Adiciona o evento de clique
-    opcoes.appendChild(li);
+    li.appendChild(button);
+    options.appendChild(li);
   });
 }
 
-function verificarResposta(respostaSelecionada) {
-  const correta = perguntas[indiceAtual].correta;
+function checkAnswer(selectedIndex) {
+  const correctIndex = questions[currentQuestionIndex].correct;
 
-  if (respostaSelecionada === correta) {
-    alert("✅ Correto!");
-    pontos++;
-  } else {
-    const respostaCerta = perguntas[indiceAtual].opcoes[correta];
-    alert(`❌ Errado! A resposta correta era: ${respostaCerta}`);
+  if (selectedIndex === correctIndex) {
+    score++;
   }
 
-  indiceAtual++;
-  mostrarPergunta();
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex < questions.length) {
+    showQuestion();
+  } else {
+    endGame();
+  }
 }
 
-function mostrarResultado() {
-  document.getElementById("quiz").classList.add("escondido");
-  document.getElementById("final").classList.remove("escondido");
-
-  const total = perguntas.length;
-  document.getElementById("pontuacaoFinal").textContent =
-    `Você acertou ${pontos} de ${total} perguntas.`;
+function endGame() {
+  document.getElementById("question-container").style.display = "none";
+  document.getElementById("result-container").style.display = "block";
+  document.getElementById("score").textContent = score;
+  document.getElementById("score-text").textContent = `Você acertou ${score} de ${questions.length}.`;
 }
 
-function voltarInicio() {
-  document.getElementById("inicio").classList.remove("escondido");
-  document.getElementById("quiz").classList.add("escondido");
-  document.getElementById("final").classList.add("escondido");
+function resetGame() {
+  currentQuestionIndex = 0;
+  score = 0;
+  document.getElementById("result-container").style.display = "none";
+  document.getElementById("start-container").style.display = "block";
 }
